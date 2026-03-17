@@ -1,0 +1,40 @@
+The issue with the MISP connector is that it's not handling large JSON bodies correctly. To fix this, we can use the `json` parameter in the `requests.post()` method to specify a maximum size for the JSON payload.
+
+Here's an example of how you can modify the Python code to send large JSON bodies:
+```python
+import requests
+
+# Set the API endpoint and authentication credentials
+url = "https://misp-api.example.com/api/objects"
+auth = ("username", "password")
+
+# Define the MISP object data as a dictionary
+data = {
+    # ... your MISP object data here ...
+}
+
+# Set the maximum size for the JSON payload (in bytes)
+max_size = 1048576  # 1MB
+
+try:
+    # Send the POST request with the large JSON body
+    response = requests.post(url, auth=auth, json=data, headers={"Content-Length": str(len(json.dumps(data)))}, data=None)
+
+    # Check if the request was successful
+    if response.status_code == 201:
+        print("MISP object created successfully!")
+    else:
+        print(f"Error creating MISP object: {response.text}")
+except requests.exceptions.RequestException as e:
+    print(f"Request error: {e}")
+```
+In this example, we set the `max_size` variable to 1MB (1048576 bytes). We then use the `json` parameter in the `requests.post()` method to specify the MISP object data. The `Content-Length` header is also set to the length of the JSON payload.
+
+Note that you should replace the `url`, `auth`, and `data` variables with your actual MISP API credentials and object data.
+
+Alternatively, you can use the `stream=True` parameter in the `requests.post()` method to send the large JSON body in chunks, rather than all at once. This can help avoid memory issues:
+```python
+response = requests.post(url, auth=auth, json=data, headers={"Content-Length": str(len(json.dumps(data)))}, stream=True)
+```
+This will allow you to process the response data as it's received, rather than waiting for the entire response to be sent.
+

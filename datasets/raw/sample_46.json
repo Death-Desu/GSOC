@@ -1,0 +1,13 @@
+{
+  "id": "vt_46",
+  "vendor": "virustotal",
+  "data": {
+    "attributes": {
+      "last_analysis_stats": {
+        "malicious": 21,
+        "total": 100
+      },
+      "id": "10.239.124.40"
+    }
+  }
+}

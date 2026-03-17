@@ -1,0 +1,11 @@
+{
+  "id": "sho_6",
+  "vendor": "shodan",
+  "ip_str": "198.14.95.66",
+  "ports": [
+    80,
+    443
+  ],
+  "vulns": [],
+  "score": 45
+}
