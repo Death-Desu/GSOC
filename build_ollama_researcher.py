@@ -3,7 +3,7 @@ import os
 
 # 1. Configuration - The BOM for your model
 DATA_SOURCE = "50_samples.jsonl"
-MODEL_NAME = "research-alpha-50"
+MODEL_NAME = "aephi"
 BASE_MODEL = "llama3.2" # Using llama3.2 since it's already installed
 OUTPUT_FILE = "ResearchBot.Modelfile"
 

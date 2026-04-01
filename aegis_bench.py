@@ -45,7 +45,7 @@ def run_inference(model_name, raw_input):
         return str(e), 0
 
 if __name__ == "__main__":
-    models = ['phi3:mini', 'llama3.2', 'research-alpha-50']
+    models = ['phi3:mini', 'llama3.2', 'aephi']
     stats = {model: {"pass": 0, "fail": 0, "latencies": []} for model in models}
 
     for filename in sorted(os.listdir(DATASET_PATH)):

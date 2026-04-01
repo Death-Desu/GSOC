@@ -45,4 +45,5 @@ def verify_model(model_name):
             print(f"Error running issue {case['issue_id']}: {e}")
 
 if __name__ == "__main__":
-    verify_model("research-alpha-50")
+    # Run against our Alpha model
+    verify_model("aephi")

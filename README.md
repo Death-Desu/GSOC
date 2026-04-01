@@ -80,7 +80,7 @@ python aegis_bench.py
 
 ## ✅ Model Verification Results
 
-Recent verification of the `research-alpha-50` model against real-world IntelOwl issues:
+Recent verification of the `aephi` model against real-world IntelOwl issues:
 
 | Issue ID | Prompt Task | Status | Note |
 | :--- | :--- | :--- | :--- |
